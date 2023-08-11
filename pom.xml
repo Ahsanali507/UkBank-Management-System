@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>uk.aston.cs1oop</groupId>
+	<artifactId>Accounts</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+		<autofeedback.version>0.5.0</autofeedback.version>
+		<ecj.version>3.23.0</ecj.version>
+		<gson.version>2.8.6</gson.version>
+		<junit.version>5.7.0</junit.version>
+		<argLine></argLine>
+
+	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/projects/21460324/packages/maven</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core</artifactId>
+			<version>3.18.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.7.7</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>resources</directory>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<!-- NOTE: with Surefire 2.x we don't capture stdout/stderr per test!
+					Might need at some point to scan POMs for this type of issue. -->
+				<version>3.0.0-M5</version>
+			</plugin>
+
+			<plugin>
+				<groupId>uk.ac.aston.autofeedback</groupId>
+				<artifactId>autofeedback-maven-plugin</artifactId>
+				<version>${autofeedback.version}</version>
+				<configuration>
+					<serverUrl>https://autofeedback.cs2410-web01pvm.aston.ac.uk</serverUrl>
+					<assessment>57</assessment>
+					<destinationFile>${project.basedir}/submission-2023-refcwk.zip</destinationFile>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<compilerId>eclipse</compilerId>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.source}</target>
+
+					<compilerArgs>
+						<!-- Allows tests to run even if there are some compilation errors -->
+						<arg>-proceedOnError</arg>
+						<!-- Reuse the Eclipse project settings -->
+						<arg>-properties</arg>
+						<arg>${project.basedir}/.settings/org.eclipse.jdt.core.prefs</arg>
+					</compilerArgs>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+
+					<!-- Try to run tests even if compilation fails (like in Eclipse) -->
+					<failOnError>false</failOnError>
+				</configuration>
+
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-eclipse</artifactId>
+						<version>2.8.8</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.eclipse.jdt</groupId>
+						<artifactId>ecj</artifactId>
+						<version>3.23.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

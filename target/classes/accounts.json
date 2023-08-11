@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Duane Fletcher",
+    "balance": 1005.27
+  },
+  {
+    "id": "2",
+    "name": "Barb Willis",
+    "balance": 739.65
+  },
+  {
+    "id": "3",
+    "name": "Colin Sanders",
+    "balance": 1952.27
+  },
+  {
+    "id": "4",
+    "name": "Jeremiah Ray",
+    "balance": 31.16
+  },
+  {
+    "id": "5",
+    "name": "Raul Campbell",
+    "balance": 1415.45
+  },
+  {
+    "id": "6",
+    "name": "Kim Kuhn",
+    "balance": 627.12
+  },
+  {
+    "id": "7",
+    "name": "Jenny Hudson",
+    "balance": 1422.88
+  },
+  {
+    "id": "8",
+    "name": "Edwin Williams",
+    "balance": 333.97
+  }
+]

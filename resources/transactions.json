@@ -1,0 +1,32 @@
+[
+    {
+        "accountId":1,
+        "description":"Supermarket Food Payment",
+        "amount": -62.52
+    },
+    {
+        "accountId":5,
+        "description":"Sale of Book",
+        "amount": 25.00
+    },
+    {
+        "accountId":2,
+        "description":"Bus fare",
+        "amount": -5.00
+    },
+    {
+        "accountId":5,
+        "description":"Train ticket",
+        "amount": -20.00
+    },
+    {
+        "accountId":1,
+        "description":"Salary Payment",
+        "amount": 1088.95
+    },
+    {
+        "accountId":1,
+        "description":"Mortgage",
+        "amount": -500.60
+    }
+]

@@ -1,0 +1,5 @@
+view
+1,hello,30
+4,example transfer,100,10
+6,too much,-50000
+quit
