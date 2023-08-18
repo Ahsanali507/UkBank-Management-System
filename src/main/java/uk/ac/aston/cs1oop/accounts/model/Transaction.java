@@ -1,5 +1,3 @@
-// Transaction.java
-
 package uk.ac.aston.cs1oop.accounts.model;
 
 import uk.ac.aston.cs1oop.accounts.exceptions.IllegalTransactionException;
@@ -25,7 +23,7 @@ public class Transaction {
         
         // Add the following check for zero amount
         if (amount == 0) {
-            throw new IllegalArgumentException("You cannot create a Transaction with a zero amount.");
+            throw new IllegalArgumentException("You cannot create a Transaction with zero amount.");
         }
     }
 
@@ -66,7 +64,7 @@ public class Transaction {
 
     public void setAmount(double amount) {
         if (amount <= 0) {
-            throw new IllegalArgumentException("You cannot set a Transaction to have a zero or negative amount.");
+            throw new IllegalArgumentException("You cannot set a Transaction to have zero or negative amount.");
         }
         this.amount = amount;
     }

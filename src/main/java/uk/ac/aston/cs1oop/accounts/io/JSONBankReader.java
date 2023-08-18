@@ -37,12 +37,12 @@ public class JSONBankReader {
                         tx.setAccount(account); // Set the associated account for the transaction
                         tx.execute(bank);
                     } else {
-                        System.out.println("Account with ID " + tx.getAccountId() + " not found for transaction: " + tx.getDescription());
+                        System.out.println("Account with this ID " + tx.getAccountId() + " is not found for transaction: " + tx.getDescription());
                     }
                 } catch (IllegalTransactionException e) {
-                    System.out.println("Transaction failed: " + e.getMessage());
+                    System.out.println("Transaction is failed: " + e.getMessage());
                     // Rethrow the exception if needed
-                    throw new IOException("Error reading transactions from JSON", e);
+                    throw new IOException("Error while reading transactions from JSON", e);
                 }
             }
         }

@@ -10,8 +10,6 @@ import uk.ac.aston.cs1oop.accounts.io.JSONBankReader;
 import uk.ac.aston.cs1oop.accounts.model.Account;
 import uk.ac.aston.cs1oop.accounts.model.Bank;
 import uk.ac.aston.cs1oop.accounts.model.Transaction;
-//import uk.ac.aston.cs1oop.accounts.model.Transfer;
-//import uk.ac.aston.cs1oop.accounts.interfaces.TransactionProcessor;
 import uk.ac.aston.cs1oop.accounts.model.TransactionFactory;
 
 public class BankAccounts {
@@ -33,13 +31,13 @@ public class BankAccounts {
         try {
             bankReader.readAccountsJSON(accountsFile);
         } catch (IOException ex) {
-            throw new IOException("Error while loading accounts", ex);
+            throw new IOException("Error while loading the accounts", ex);
         }
 
         try {
             bankReader.readTransactionsJSON(transactionsFile);
         } catch (IOException ex) {
-            throw new IOException("Error while loading transactions", ex);
+            throw new IOException("Error while loading the transactions", ex);
         }
     }
 
@@ -58,14 +56,14 @@ public class BankAccounts {
             }
             line = lines.get();
         }
-        System.out.println("Bye. Thanks for visiting the bank");
+        System.out.println("Bye Bye. Thank you for visiting the bank");
     }
     
     public void doTransaction(Transaction tx) {
         Account account = bank.getAccount(tx.getAccountId());
 
         if (account == null) {
-            System.out.println("Account not found for transaction: " + tx.getDescription());
+            System.out.println("Account is not found for transaction: " + tx.getDescription());
             return; // Reject the transaction
         }
 

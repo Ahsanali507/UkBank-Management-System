@@ -1,5 +1,3 @@
-// IllegalTransactionException.java
-
 package uk.ac.aston.cs1oop.accounts.exceptions;
 
 import uk.ac.aston.cs1oop.accounts.model.Account;

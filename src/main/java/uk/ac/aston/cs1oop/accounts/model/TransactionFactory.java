@@ -1,14 +1,10 @@
-// TransactionFactory.java
-
 package uk.ac.aston.cs1oop.accounts.model;
-
-//import uk.ac.aston.cs1oop.accounts.interfaces.TransactionProcessor;
 
 public class TransactionFactory {
     public static Transaction getTransaction(String idData) {
         String[] parts = idData.split(",");
         if (parts.length < 3 || parts.length > 4) {
-            throw new IllegalArgumentException("Invalid transaction data: " + idData);
+            throw new IllegalArgumentException("Invalid transaction input data format: " + idData);
         }
 
         long accountId = Long.parseLong(parts[0]);
@@ -22,6 +18,6 @@ public class TransactionFactory {
             return new Transfer(accountId, description, amount, beneficiaryAccountId);
         }
 
-        throw new IllegalArgumentException("Invalid transaction data: " + idData);
+        throw new IllegalArgumentException("Invalid transaction input data format: " + idData);
     }
 }

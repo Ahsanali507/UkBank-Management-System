@@ -1,5 +1,3 @@
-// Account.java
-
 package uk.ac.aston.cs1oop.accounts.model;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class Account {
         this.transactions = new ArrayList<>(); // Initialize the transactions list
     }
 
-    // Getters and Setters for id, name, and balance
+    // Getters and Setters
 
     public long getId() {
         return id;
@@ -48,7 +46,7 @@ public class Account {
         this.balance = balance;
     }
 
-    // Other methods for handling transactions
+    // Other methods for handling the transactions
 
     public List<Transaction> getTransactions() {
         return transactions;
