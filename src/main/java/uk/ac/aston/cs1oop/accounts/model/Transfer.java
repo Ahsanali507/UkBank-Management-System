@@ -11,7 +11,7 @@ public class Transfer extends Transaction {
         
         // Add the following check for the same accounts
         if (accountId == beneficiaryAccountId) {
-            throw new IllegalArgumentException("Account and Beneficiary Accounts must be different for a Transfer.");
+            throw new IllegalArgumentException("Account and Beneficiary Accounts must be both different for the Transfer.");
         }
         
      // Add the following check for negative amount

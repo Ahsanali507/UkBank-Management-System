@@ -62,10 +62,10 @@ public class Account {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Account ID: ").append(id).append("\n");
-        sb.append("Account Name: ").append(name).append("\n");
-        sb.append("Balance: ").append(balance).append("\n");
-        sb.append("Transactions: ");
+        sb.append("Account ID is: ").append(id).append("\n");
+        sb.append("Account Name is: ").append(name).append("\n");
+        sb.append("Balance is: ").append(balance).append("\n");
+        sb.append("Transactions are: ");
         if (transactions == null) {
             sb.append("null transactions");
         } else if (transactions.isEmpty()) {

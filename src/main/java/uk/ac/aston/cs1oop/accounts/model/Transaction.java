@@ -136,6 +136,6 @@ public class Transaction {
 
 
     public String toString() {
-        return "Account ID: " + accountId + ", Description: " + description + ", Amount: " + amount;
+        return "Account ID is: " + accountId + ", Description is: " + description + ", Amount is: " + amount;
     }
 }

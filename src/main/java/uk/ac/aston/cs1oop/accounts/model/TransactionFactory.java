@@ -4,7 +4,7 @@ public class TransactionFactory {
     public static Transaction getTransaction(String idData) {
         String[] parts = idData.split(",");
         if (parts.length < 3 || parts.length > 4) {
-            throw new IllegalArgumentException("Invalid transaction input data format: " + idData);
+            throw new IllegalArgumentException("Invalid transaction input's data format: " + idData);
         }
 
         long accountId = Long.parseLong(parts[0]);
@@ -18,6 +18,6 @@ public class TransactionFactory {
             return new Transfer(accountId, description, amount, beneficiaryAccountId);
         }
 
-        throw new IllegalArgumentException("Invalid transaction input data format: " + idData);
+        throw new IllegalArgumentException("Invalid transaction input's data format: " + idData);
     }
 }

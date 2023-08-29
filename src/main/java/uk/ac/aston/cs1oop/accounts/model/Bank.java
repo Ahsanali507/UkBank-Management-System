@@ -37,7 +37,7 @@ public class Bank implements TransactionProcessor {
     public void doTransaction(Transaction tx) throws IllegalTransactionException {
         // Refuse to run transactions that are not new
         if (!tx.isNew()) {
-            throw new IllegalArgumentException("Transaction is not new and cannot be processed.");
+            throw new IllegalArgumentException("Transaction is not new and it cannot be processed.");
         }
 
         // Get the account ID from the transaction
@@ -46,7 +46,7 @@ public class Bank implements TransactionProcessor {
         // Check if the account ID is part of this Bank
         Account account = getAccount(accountId);
         if (account == null) {
-            throw new IllegalTransactionException("Account not found.", null, tx);
+            throw new IllegalTransactionException("Account is not found.", null, tx);
         }
 
         // Add the transaction to the list of transactions of its matching Account
